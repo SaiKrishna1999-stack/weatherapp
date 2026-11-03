@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { WeatherComponent } from './weather/weather.component';
+import { provideHttpClient } from '@angular/common/http';
 
-bootstrapApplication(App, appConfig)
+bootstrapApplication(WeatherComponent, {
+  providers: [
+    provideHttpClient()
+  ]
+})
   .catch((err) => console.error(err));

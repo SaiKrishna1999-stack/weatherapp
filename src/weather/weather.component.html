@@ -1,0 +1,22 @@
+<div class="weathercontainer">
+<form class="m-4" (ngSubmit)="searchCity(cityInput.value)">
+    <div class="input-group">
+        <input #cityInput id="city" class="form-control" type="text" placeholder="Enter a city" />
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="card text-bg-primary m-5" style="max-width: 18rem;">
+    <div class="card-header text-center">
+        <h2>{{ city() }}</h2>
+        <p>
+            <img src="{{ icon() }}" alt="Weather Icon" />
+        </p>
+    </div>
+    <div class="card-body">
+        <p class="card-text">Summary: {{ summary() }}</p>
+        <p class="card-text">Temperature: {{ temperature() }}°C</p>
+        <p class="card-text">Feels Like: {{ feelsLike() }}°C</p>
+        <p class="card-text">Humidity: {{ humidity() }}%</p>
+    </div>
+</div>
+</div>
